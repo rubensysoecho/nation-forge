@@ -1,13 +1,3 @@
-<script setup>
-    const props = defineProps({
-    });
-</script>
-
 <template>
-    <button
-        type="button"
-        class="bg-blue-500 text-white px-5 py-2 rounded-lg"
-        @click="$emit('fn')"
-        >Boton 1</button>
-
+    <button class="rounded-full px-4 py-2 bg-amber-500 text-white border-none cursor-pointer text-lg hover:bg-amber-700">Crear nación</button>
 </template>
