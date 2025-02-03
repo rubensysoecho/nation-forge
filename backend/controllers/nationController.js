@@ -1,12 +1,13 @@
 import Nation from '../models/Nation.js';
 import NationTest from '../models/NationTest.js';
+import generateNation from '../config/openai.js';
 
 const createNation = async (req, res) => {
     try {
-        const newNation = new NationTest(req.body);
-        const savedNation = await newNation.save();
-
-        res.send('Nation saved successfully: ', savedNation);
+        //const newNation = new NationTest(req.body);
+        //const savedNation = await newNation.save();
+        const nation = await generateNation(req.body.nation_name, req.body.governmentType, req.body.age);
+        res.send(nation);
     } catch (error) {
         console.log(error);
         res.send(
