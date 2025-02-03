@@ -1,5 +1,14 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Nation Forge
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+This alternative history platform empowers users to shape the trajectory of the world. This includes:
+
+- **Historical context** 📜: The origins of the nation—how and why it came into existence.
+- **Geopolitical situation** 🌍: Potential wars, alliances, and crises that would have emerged if the nation had existed.
+- **Political landscape** 🏛️: The internal political dynamics of the nation, deeply influenced by its form of government.
+- **Demographics** 👥: The population within the nation's borders, including cultures, occupations, and societal structures.
+- **Key figures** 🦸‍♂️🦸‍♀️: Individuals whose efforts and leadership have profoundly shaped the nation.
+- **War Simulation** ⚔️ ⚠️WIP⚠️: A simulation of warfare between two nations and its global repercussions.
+
+and more... ✨
+## Installation
