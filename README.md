@@ -11,4 +11,3 @@ This alternative history platform empowers users to shape the trajectory of the 
 - **War Simulation** ⚔️ ⚠️WIP⚠️: A simulation of warfare between two nations and its global repercussions.
 
 and more... ✨
-## Installation
