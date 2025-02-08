@@ -1,63 +1,30 @@
 <template>
     <div class="p-10">
-        <form @submit.prevent="handleSubmit">
-            <div>
-                <label for="concept">Concepto de Nación:</label>
-                <input type="text" id="concept" v-model="form.concept" required />
+        <form @submit.prevent="handleSubmit" class="flex flex-col max-w-md mx-auto">
+            <div class="mb-4 flex flex-col">
+                <label for="concept" class="mb-2 font-bold">Concepto de Nación:</label>
+                <input type="text" id="concept" v-model="form.concept" required class="p-2 text-base border border-gray-300 rounded" />
             </div>
-            <div>
-                <label for="governmentType">Tipo de Gobierno:</label>
-                <input type="text" id="governmentType" v-model="form.governmentType" required />
+            <div class="mb-4 flex flex-col">
+                <label for="governmentType" class="mb-2 font-bold">Tipo de Gobierno:</label>
+                <input type="text" id="governmentType" v-model="form.governmentType" required class="p-2 text-base border border-gray-300 rounded" />
             </div>
-            <div>
-                <label for="historicalPeriod">Época Histórica:</label>
-                <input type="text" id="historicalPeriod" v-model="form.historicalPeriod" required />
+            <div class="mb-4 flex flex-col">
+                <label for="historicalPeriod" class="mb-2 font-bold">Época Histórica:</label>
+                <input type="text" id="historicalPeriod" v-model="form.historicalPeriod" required class="p-2 text-base border border-gray-300 rounded" />
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="p-2 text-base cursor-pointer bg-amber-500 text-white border-none rounded hover:bg-amber-600">Enviar</button>
         </form>
     </div>
 </template>
 
-<style scoped>
-    form {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        margin: auto;
-        display: flex;
-    }
-
-    div {
-        margin-bottom: 1em;
-        display: flex;
-        flex-direction: column;
-    }
-
-    label {
-        margin-bottom: 0.5em;
-        font-weight: bold;
-    }
-
-    input {
-        padding: 0.5em;
-        font-size: 1em;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    button {
-        padding: 0.5em;
-        font-size: 1em;
-        cursor: pointer;
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-</style>
-
 <script>
+    import { useRouter } from 'vue-router';
+
     export default {
+        created() {
+            this.router = useRouter();
+        },
         data() {
             return {
                 form: {
@@ -69,9 +36,15 @@
         },
         methods: {
             handleSubmit() {
-                console.log(this.form);
-                // Aquí puedes agregar la lógica para manejar el envío del formulario
+                const nation = {
+                    nation_name: "",
+                    historical_context: "",
+                    geopolitical_context: "",
+                    politics: "",
+                    population: ""
+                };
+                this.router.push({ path: '/nations/data' + nation });
+                }
             }
-        }
-    };
+    }
 </script>
