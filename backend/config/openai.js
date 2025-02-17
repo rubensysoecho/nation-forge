@@ -7,7 +7,7 @@ const openai = new OpenAI({
 });
 
 async function generateNation(nationConcept, governmentType, age) {
-    const jsonFormat = {
+    /*const jsonFormat = {
         nation_name: "",
         historical_context: "",
         geopolitical_context: "",
@@ -15,6 +15,102 @@ async function generateNation(nationConcept, governmentType, age) {
         population: "",
         historical_curiosities: ["", ""],
         important_characters: ["", ""]
+    };
+    */
+
+    const jsonFormat = {
+        "nation": {
+            "name": "",
+            "narrative": "",
+            "politics": {
+                "exterior": {
+                    "wars": [
+                        {
+                            "name": "",
+                            "attacker": "",
+                            "defender": "",
+                            "summary": ""
+                        }
+                    ],
+                    "alliances": [
+                        {
+                            "name": "",
+                            "members": []
+                        }
+                    ]
+                },
+                "interior": {
+                    "government_type": "",
+                    "political_ideology": "",
+                    "leaders": [
+                        {
+                            "name": "",
+                            "title": "", // Add a title or role for the leader
+                            "start_date": "", // Add dates for context
+                            "end_date": ""
+                        }
+                    ],
+                    "tensions": {
+                        "cultural": [
+                            {
+                                "organization": "",
+                                "demands": "",
+                                "actions": ""
+                            },
+                        ],
+                        "religious": [
+                            {
+                                "organization": "",
+                                "demands": "",
+                                "actions": ""
+                            },
+                        ],
+                        "political": [
+                            {
+                                "organization": "",
+                                "demands": "",
+                                "actions": ""
+                            },
+                        ]
+                    }
+                }
+            },
+            "economy": {
+                "resources": [
+                    { 
+                        "name": "",
+                        "quantity": "",
+                        "unit": "",
+                    },
+                ], // More concise name
+                "laws": { // Group laws for better organization
+                    "economic": "",
+                    "trade": ""
+                }
+            },
+            "history": {
+                "origin": "",
+                "key_events": []  // Add key events to the history
+            },
+            "demographics": {
+                "population": {
+                    "size": "",
+                    "ethnicities": []
+                },
+                "cultures": [],
+                "occupations": []
+            },
+            "geography": {
+                "land_area": "",
+                "climate": "",
+                "natural_features": []
+            },
+            "culture": {
+                "traditions": [],
+                "arts": [],
+                "languages": []
+            }
+        }
     };
 
     const userPrompt = `Explain how the concept of '${nationConcept}' could have shaped or existed during the '${age}' with a '${governmentType}' type of government.`;
