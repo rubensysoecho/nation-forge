@@ -1,0 +1,102 @@
+{
+    "nation": {
+      "name": "Reino de Eldoria",
+      "narrative": "El Reino de Eldoria, una nación forjada en la unión de tribus guerreras y el descubrimiento de ricos yacimientos de hierro, ha emergido como una potencia regional. Su historia está marcada por conflictos épicos, alianzas estratégicas y una rica tradición cultural que florece en sus fértiles tierras.",
+      "politics": {
+        "exterior": {
+          "wars": [
+            {
+              "name": "Guerra de la Unificación",
+              "causas": "Unificación de las tribus eldrianas bajo el liderazgo de Alaric el Grande",
+              "beligerantes": [
+                { "nacion": "Tribus Eldorianas", "bando": "Unión" },
+                { "nacion": "Imperio Valeriano", "bando": "Imperio" }
+              ],
+              "duracion": "1450-1475",
+              "resultados": "Formación del Reino de Eldoria",
+              "bajas": {
+                "militares": 50000,
+                "civiles": 10000
+              },
+              "impacto": "Consolidación del poder Eldoriano y expansión territorial",
+              "eventos_clave": [
+                {
+                  "tipo": "batalla",
+                  "ubicacion": "Valle de la Victoria",
+                  "fecha": "1465",
+                  "descripcion": "Victoria decisiva de Alaric el Grande"
+                }
+              ]
+            }
+          ],
+          "alliances": [
+            {
+              "name": "Pacto de Acero",
+              "members": ["Eldoria", "Reino del Centro"]
+            }
+          ]
+        },
+        "interior": {
+          "government_type": "Monarquía Constitucional",
+          "political_ideology": "Conservadurismo Ilustrado",
+          "leaders": [
+            {
+              "name": "Rey Alaric I",
+              "title": "Monarca",
+              "start_date": "1750",
+              "end_date": "1785"
+            }
+          ],
+          "tensions": {
+            "cultural": [
+              {
+                "organization": "Frente de Liberación Étnica del Norte",
+                "demands": "Mayor autonomía regional",
+                "actions": "Protestas pacíficas"
+              }
+            ],
+            "religious": [],
+            "political": []
+          }
+        }
+      },
+      "economy": {
+        "natural_resources": [
+          { "name": "Hierro", "quantity": 100000, "unit": "toneladas" }
+        ],
+        "legal_framework": {
+          "economic_laws": "Libre mercado con regulaciones estatales",
+          "trade_laws": "Fomento del comercio exterior"
+        }
+      },
+      "history": {
+        "origin": "Unificación de tribus guerreras en el siglo XV",
+        "key_events": [
+          {
+            "tipo": "descubrimiento",
+            "ubicacion": "Montañas de Acero",
+            "fecha": "1600",
+            "descripcion": "Descubrimiento de las Minas de Hierro"
+          }
+        ]
+      },
+      "demographics": {
+        "population": {
+          "size": 5000000,
+          "ethnicities": ["Eldorianos", "Nórdicos"]
+        },
+        "cultures": ["Cultura Eldoriana tradicional"],
+        "occupations": ["Agricultores", "Mineros"]
+      },
+      "geography": {
+        "land_area": "500,000 km²",
+        "climate": "Templado continental",
+        "natural_features": ["Río Eldor", "Bosque de las Sombras"]
+      },
+      "culture": {
+        "traditions": ["Festival de la Primavera"],
+        "arts": ["Música folclórica"],
+        "languages": ["Eldoriano (oficial)"]
+      }
+    }
+}

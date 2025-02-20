@@ -4,10 +4,6 @@
 </script>
 
 <template>
-    <!-- <div style="position: relative; z-index: 2;">
-        <Header />
-    </div>
-    -->
     <div style="position: relative; z-index: 1;">
         <Carousel />
     </div>
