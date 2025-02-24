@@ -1,3 +1,62 @@
+<script setup>
+import { reactive, ref, onMounted } from 'vue';
+
+const formData = reactive({
+    nationName: '',
+    governmentType: '',
+    age: '',
+});
+
+const loading = ref(false);
+const dots = ref('');
+
+function animateDots() {
+    const dotInterval = setInterval(() => {
+        if (dots.value.length < 3) {
+            dots.value += '.';
+        } else {
+            dots.value = '';
+        }
+    }, 500);
+
+    onMounted(() => {
+        clearInterval(dotInterval);
+    });
+}
+
+function generateNation() {
+    loading.value = true;
+    animateDots();
+
+    fetch('http://localhost:4000/api/nation', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            loading.value = false;
+            dots.value = '';
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            loading.value = false;
+            dots.value = '';
+        });
+}
+
+const handleSubmit = () => {
+    if (formData.nationName == "" || formData.governmentType == "" || formData.age == "") {
+        console.log('Hay datos sin rellenar');
+    } else {
+        generateNation();
+    }
+};
+</script>
+
 <template>
     <form @submit.prevent="handleSubmit" class="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
         <div class="mb-4">
@@ -25,41 +84,8 @@
             class="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Crear Nación
         </button>
+        <div v-if="loading" class="mt-4 text-center">
+            <p>Cargando{{ dots }}</p>
+        </div>
     </form>
 </template>
-
-<script setup>
-import { reactive } from 'vue';
-
-const formData = reactive({
-    nationName: '',
-    governmentType: '',
-    age: '',
-});
-
-function generateNation() {
-    console.log("Generando nación...")
-    fetch('http://localhost:4000/api/nation', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-}
-
-const handleSubmit = () => {
-    if (formData.nationName == "" || formData.governmentType == "" || formData.age == "") {
-        console.log('Hay datos sin rellenar');
-    } else {
-        generateNation();
-    }
-};
-</script>
