@@ -14,11 +14,11 @@ import NationsList from '../components/NationsList.vue';
         </div>
         <div class="relative z-10 flex w-full">
             <div class="w-1/2 p-8">
-            <NationForm />
+                <NationForm />
             </div>
             <div class="w-px bg-gray-300"></div>
             <div class="w-1/2 p-8">
-            <NationsList />
+                <NationsList />
             </div>
         </div>
     </div>

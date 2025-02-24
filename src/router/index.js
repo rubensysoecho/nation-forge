@@ -6,7 +6,7 @@ import NationData from '../pages/NationData.vue';
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/nation/generate', component: GenForm },
+    { path: '/nation/', component: GenForm },
     { path: '/nation/data', component: NationData },
     //{ path: '/nation/list', component: NationsList }
 ];

@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import Carousel from '../components/Carousel.vue';
+import TextHeader from '../components/TextHeader.vue';
 import { useNationStore } from '../store/nationStore';
 
 const dropdowns = reactive({
@@ -19,8 +20,7 @@ const store = useNationStore()
     <div class="relative min-h-screen overflow-y-auto">
         <Carousel />
         <div class="absolute inset-0 z-10 p-8 text-white">
-            <h1 class="text-5xl font-bold mb-6 text-center">⚔️ {{ store.nationData.nation_name }} ⚔️</h1>
-
+            <TextHeader :text="'⚔️ ' + store.nationData.nation_name + ' ⚔️'" />
             <div class="mb-4">
                 <button @click="dropdowns.historical = !dropdowns.historical"
                     class="flex items-center justify-between w-full py-2 px-4 font-semibold text-left bg-gray-700 rounded-md hover:bg-gray-600">
