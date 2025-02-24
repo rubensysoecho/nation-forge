@@ -2,9 +2,11 @@
 import Carousel from '../components/Carousel.vue';
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useNationStore } from '../store/nationStore';
 
 const nations = ref([]);
 const router = useRouter();
+const store = useNationStore()
 
 async function listNations()  {
     try {
@@ -24,7 +26,8 @@ onMounted(async () => {
 });
 
 const goToNation = (nation) => {
-    router.push({ name: 'NationDetail', params: { id: nation._id }, query: { nation: JSON.stringify(nation) } });
+    store.setNationData(nation)
+    router.push({ path:'/nation/data' })
 };
 </script>
 

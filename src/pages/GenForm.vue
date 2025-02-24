@@ -1,7 +1,7 @@
 <script setup>
-    import NationForm from '../components/NationForm.vue';
-    import Carousel from '../components/Carousel.vue';
-
+import NationForm from '../components/NationForm.vue';
+import Carousel from '../components/Carousel.vue';
+import NationsList from '../components/NationsList.vue';
 </script>
 
 <template>
@@ -12,8 +12,14 @@
         <div class="absolute inset-0 z-0">
             <Carousel />
         </div>
-        <div class="relative z-10">
+        <div class="relative z-10 flex w-full">
+            <div class="w-1/2 p-8">
             <NationForm />
+            </div>
+            <div class="w-px bg-gray-300"></div>
+            <div class="w-1/2 p-8">
+            <NationsList />
+            </div>
         </div>
     </div>
 </template>
