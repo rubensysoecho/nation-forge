@@ -58,34 +58,41 @@ const handleSubmit = () => {
 </script>
 
 <template>
-    <form @submit.prevent="handleSubmit" class="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
-        <div class="mb-4">
-            <label for="nationName" class="block text-gray-700 text-sm font-bold mb-2">Nombre de Nación:</label>
+    <form @submit.prevent="handleSubmit" class="space-y-6">
+        <div class="space-y-2">
+            <label for="nationName" class="block text-sm font-medium text-gray-300">Nombre de Nación</label>
             <input type="text" id="nationName" v-model="formData.nationName"
-                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                placeholder="Ingresa el nombre de tu nación" />
         </div>
-        <div class="mb-4">
-            <label for="governmentType" class="block text-gray-700 text-sm font-bold mb-2">Tipo de Gobierno:</label>
+
+        <div class="space-y-2">
+            <label for="governmentType" class="block text-sm font-medium text-gray-300">Tipo de Gobierno</label>
             <select id="governmentType" v-model="formData.governmentType"
-                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300">
-                <option value="">Selecciona un tipo de gobierno</option>
-                <option value="monarquia">Monarquía</option>
-                <option value="republica">República</option>
-                <option value="dictadura">Dictadura</option>
-                <option value="teocracia">Teocracia</option>
+                class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
+                <option value="" class="bg-gray-700">Selecciona un tipo de gobierno</option>
+                <option value="monarquia" class="bg-gray-700">Monarquía</option>
+                <option value="republica" class="bg-gray-700">República</option>
+                <option value="dictadura" class="bg-gray-700">Dictadura</option>
+                <option value="teocracia" class="bg-gray-700">Teocracia</option>
             </select>
         </div>
-        <div class="mb-6">
-            <label for="age" class="block text-gray-700 text-sm font-bold mb-2">Época / Año:</label>
+
+        <div class="space-y-2">
+            <label for="age" class="block text-sm font-medium text-gray-300">Época / Año</label>
             <input type="text" id="age" v-model="formData.age"
-                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300" />
+                class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                placeholder="Ej: Edad Media, 1500 d.C." />
         </div>
+
         <button type="submit"
-            class="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]">
             Crear Nación
         </button>
-        <div v-if="loading" class="mt-4 text-center">
-            <p>Cargando{{ dots }}</p>
+
+        <div v-if="loading" class="flex items-center justify-center space-x-2 text-gray-300">
+            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+            <span>Generando tu nación{{ dots }}</span>
         </div>
     </form>
 </template>
